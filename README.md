@@ -23,6 +23,9 @@ Add your [PixaBay API](https://pixabay.com/) key in local.properties file.
 PIXABAY_API=YOUR_API_KEY
 ````
 
+
+<img src="https://user-images.githubusercontent.com/36087806/216851697-ddc9b7fb-b64f-483c-9c40-8f7b894e1008.gif" align="right" width="23%"/>
+
 # Tech stack & Open-source libraries
 - 100% Kotlin based app
 - Minimum sdk 24 supporting Android 7 and above
