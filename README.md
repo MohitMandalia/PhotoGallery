@@ -23,5 +23,22 @@ Add your [PixaBay API](https://pixabay.com/) key in local.properties file.
 PIXABAY_API=YOUR_API_KEY
 ````
 
+# Tech stack & Open-source libraries
+- 100% Kotlin based app
+- Minimum sdk 24 supporting Android 7 and above
+- Architecture
+  - Clean Architecture (Use case based architecture)
+  - Repository pattern
+- Jetpack Compose
+- Accompanist
+- Retrofit2
+- Coroutines
+- Flow
+- Coil
+- Mockk 
+- Room 
+- Hilt
+- Timber
+
 # Download
 Download the [APK](https://github.com/MohitMandalia/PhotoGallery/releases/tag/v1.0-alpha) here
