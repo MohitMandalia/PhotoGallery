@@ -46,7 +46,8 @@ fun GalleryImageListScreen(
 ) {
     SetStatusBar()
 
-    val state = viewModel.photoList.value
+    val state = viewModel.galleryImageList.value
+    val query = viewModel.searchQuery.value
     val dialogState = remember {
         mutableStateOf(false)
     }
@@ -86,6 +87,7 @@ fun GalleryImageListScreen(
     ) {
 
         GallerySearchBar(
+            defaultText = query,
             onSearch = {
                 viewModel.getPhotos(
                     query = it

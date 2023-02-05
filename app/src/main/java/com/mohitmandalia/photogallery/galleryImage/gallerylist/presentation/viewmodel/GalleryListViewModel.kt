@@ -22,24 +22,27 @@ class GalleryListViewModel @Inject constructor(
     private val getGalleryImagesUseCase: GetGalleryImagesUseCase,
 ) : ViewModel() {
 
-    private val _photoList = mutableStateOf(GalleryImageListState())
-    val photoList: State<GalleryImageListState> = _photoList
+    val searchQuery = mutableStateOf(Constants.DEFAULT_SEARCH_TERM)
+
+    private val _galleryImageList = mutableStateOf(GalleryImageListState())
+    val galleryImageList: State<GalleryImageListState> = _galleryImageList
 
     init {
-        getPhotos()
+        getPhotos(searchQuery.value)
     }
 
-    fun getPhotos(query: String = Constants.DEFAULT_SEARCH_TERM) {
+    fun getPhotos(query: String) {
+        searchQuery.value = query
         getGalleryImagesUseCase(query).onEach { result ->
             when(result) {
                 is Resource.Success -> {
-                    _photoList.value = GalleryImageListState(galleryImages = result.data ?: emptyList())
+                    _galleryImageList.value = GalleryImageListState(galleryImages = result.data ?: emptyList())
                 }
                 is Resource.Loading -> {
-                    _photoList.value = GalleryImageListState(isLoading = true)
+                    _galleryImageList.value = GalleryImageListState(isLoading = true)
                 }
                 is Resource.Error -> {
-                    _photoList.value = GalleryImageListState(error = result.message ?: "Unexpected Error")
+                    _galleryImageList.value = GalleryImageListState(error = result.message ?: "Unexpected Error")
                 }
             }
         }.launchIn(viewModelScope)

@@ -32,12 +32,14 @@ import com.mohitmandalia.photogallery.core.util.defaultSpacerWidth
 
 @Composable
 fun GallerySearchBar(
+    defaultText: String? = null,
     hint: String = "Search by keywords like \"fruits\"",
     onSearch: (String) -> Unit
 ) {
 
+    val defaultSearchTerm = defaultText ?: ""
     val text = remember {
-        mutableStateOf("fruits")
+        mutableStateOf(defaultSearchTerm)
     }
 
     var isHintDisplayed by remember {
