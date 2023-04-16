@@ -3,6 +3,8 @@
 Photo Gallery is a small demo application based on modern Android tech-stacks like Jetpack Compose using [PixaBay API](https://pixabay.com/). Also fetching data from the network and integrating persisted data in the database via repository pattern.
 This app was developed using Clean Architecture.
 
+iOS source code available [here](https://github.com/MohitMandalia/PhotoGallery-iOS)
+
 # Screens
 <table>
   <tr>
